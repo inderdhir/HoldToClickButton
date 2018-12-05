@@ -52,7 +52,6 @@ private class HoldToClickFillView: UIView {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("TOUCHES ENDED")
         startTime = nil
 
         fillTimer?.invalidate()
@@ -62,9 +61,6 @@ private class HoldToClickFillView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        print("DRAW")
-//        super.draw(rect)
-
         if let startTime = startTime {
             let elapsed = Date().timeIntervalSince(startTime)
             if elapsed < time {
@@ -118,6 +114,7 @@ class ViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
+        button.layer.masksToBounds = true
         return button
     }()
 
@@ -144,4 +141,3 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
