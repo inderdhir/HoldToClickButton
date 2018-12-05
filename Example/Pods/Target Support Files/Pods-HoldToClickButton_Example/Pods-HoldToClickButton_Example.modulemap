@@ -1,0 +1,6 @@
+framework module Pods_HoldToClickButton_Example {
+  umbrella header "Pods-HoldToClickButton_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

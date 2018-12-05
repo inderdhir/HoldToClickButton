@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20FE44F021B8327000E04306 /* HoldToClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE44EF21B8327000E04306 /* HoldToClickButton.swift */; };
+		2D6BA9E3BD70D84969C0E0A3911269D7 /* Pods-HoldToClickButton_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A10E15FDBCA94AD572E43FF1561A6458 /* Pods-HoldToClickButton_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		411B9DC457E38AFFF1A56E9451462761 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		45554257302F17F7E546D4F832B26846 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		47A5497033B037925A3256985D34C240 /* HoldToClickButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8128506123FB6AE97C289DAEE0F671 /* HoldToClickButton-dummy.m */; };
+		4A450193FDB3A9B700EF01B07B591C39 /* Pods-HoldToClickButton_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B98B9D4A21B438778BD1C7694C3654A /* Pods-HoldToClickButton_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4CC66D11AE26776C1B28AB03FD62891 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		C92762F03652A6CA7DF2DD510111CFC7 /* HoldToClickButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2271FBE420E1E56902B4E94B6ABD20E5 /* HoldToClickButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E029CEA93A7F9C1A30EE5FCD09908EA0 /* Pods-HoldToClickButton_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0950B10FCD522615B1112DDD24F44129 /* Pods-HoldToClickButton_Tests-dummy.m */; };
+		E6245764684AC166F858FED633C8D8A5 /* Pods-HoldToClickButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB269699B97C568670B81939C679EF4 /* Pods-HoldToClickButton_Example-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25B309E8CF501E3F87C3EEE8A870357C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CC6A1EEE4D967B566314D28E20E6013;
+			remoteInfo = HoldToClickButton;
+		};
+		E5D129A4403003B6CEE2218A2FB0FF20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7575409F16BA3E1515C0E8489943E47;
+			remoteInfo = "Pods-HoldToClickButton_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05FF04F705B47D97AE245032D7081FAC /* Pods-HoldToClickButton_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HoldToClickButton_Tests-resources.sh"; sourceTree = "<group>"; };
+		0950B10FCD522615B1112DDD24F44129 /* Pods-HoldToClickButton_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HoldToClickButton_Tests-dummy.m"; sourceTree = "<group>"; };
+		1082CE5283601A0F8237463C702BDF2F /* Pods-HoldToClickButton_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HoldToClickButton_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		1B2A922CBC6861A8E8211C4E71F24BD6 /* Pods-HoldToClickButton_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HoldToClickButton_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		20FE44EF21B8327000E04306 /* HoldToClickButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldToClickButton.swift; sourceTree = "<group>"; };
+		2271FBE420E1E56902B4E94B6ABD20E5 /* HoldToClickButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HoldToClickButton-umbrella.h"; sourceTree = "<group>"; };
+		2947261A9AF081A1CF28E3CB09BE7D41 /* Pods-HoldToClickButton_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HoldToClickButton_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2B98B9D4A21B438778BD1C7694C3654A /* Pods-HoldToClickButton_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HoldToClickButton_Example-umbrella.h"; sourceTree = "<group>"; };
+		37B4BEB907254055CC428B0C0BA6EDB0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B4E60C0EF3130EAD89C966D3B1A87B8 /* Pods-HoldToClickButton_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HoldToClickButton_Example-resources.sh"; sourceTree = "<group>"; };
+		45864141AAEF303E041C016CDE4BDE94 /* Pods-HoldToClickButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HoldToClickButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4C8F96BE9D09D7B5BE6C012F634733FC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A9358FD4DBA9F9381AE6BEBE64A0DA6 /* Pods-HoldToClickButton_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HoldToClickButton_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7B8128506123FB6AE97C289DAEE0F671 /* HoldToClickButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HoldToClickButton-dummy.m"; sourceTree = "<group>"; };
+		7CB269699B97C568670B81939C679EF4 /* Pods-HoldToClickButton_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HoldToClickButton_Example-dummy.m"; sourceTree = "<group>"; };
+		8366C95CFDF7E2AA56111B9BE6E8E15F /* HoldToClickButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HoldToClickButton.xcconfig; sourceTree = "<group>"; };
+		87DDB6F1BF42795B192C76A0CF7D15F0 /* Pods-HoldToClickButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HoldToClickButton_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8C7463FFA126010F409057E419266F90 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DE4F08ABC12318BAD03FCDD78CBAED3 /* Pods-HoldToClickButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HoldToClickButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A10E15FDBCA94AD572E43FF1561A6458 /* Pods-HoldToClickButton_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HoldToClickButton_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B6E74F9E7A3B8DE6573BF878BF4DD51C /* HoldToClickButton.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = HoldToClickButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B8B1676B2A6062523A1DBF85F870AA39 /* Pods_HoldToClickButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoldToClickButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB5808194E1D21C65A957B0553AD02D6 /* HoldToClickButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HoldToClickButton-prefix.pch"; sourceTree = "<group>"; };
+		BD171E6F9672B07AA63C6F6A0B873F43 /* Pods-HoldToClickButton_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HoldToClickButton_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		BEE406D9C02B9C4181B861EEB692AAD5 /* Pods-HoldToClickButton_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HoldToClickButton_Example.modulemap"; sourceTree = "<group>"; };
+		C0D383444303621DCD8519CDC0CC6F0B /* Pods_HoldToClickButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoldToClickButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C852C85E0D3B3467D99929ABF7E14C56 /* HoldToClickButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HoldToClickButton.modulemap; sourceTree = "<group>"; };
+		E21C22C0F87CB625F47F8644DC5F62C7 /* Pods-HoldToClickButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HoldToClickButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E9ADA084372668634D7FFC57CAEDBF /* HoldToClickButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HoldToClickButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED62A93A8936F8554A77406BEDC9919C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F816CD1B9439683BA493955D2142C03D /* Pods-HoldToClickButton_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HoldToClickButton_Tests.modulemap"; sourceTree = "<group>"; };
+		FB8B87EDBEEE22C0C1A5B99F8790A524 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC14F995CD3B22A07D94F00CBC7CEDA /* Pods-HoldToClickButton_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HoldToClickButton_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		451036185F7B83FA087AD0679287ECF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4CC66D11AE26776C1B28AB03FD62891 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E253AA1ABA50236FE05FC18614BAC52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45554257302F17F7E546D4F832B26846 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F309D8D92D2F2A132895962350979920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				411B9DC457E38AFFF1A56E9451462761 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		615FA4AB9866FAA8198CAFB1D066AD74 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B6E74F9E7A3B8DE6573BF878BF4DD51C /* HoldToClickButton.podspec */,
+				4C8F96BE9D09D7B5BE6C012F634733FC /* LICENSE */,
+				8C7463FFA126010F409057E419266F90 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		74174FE9D4593E4B91F8E65CA355653A /* Pods-HoldToClickButton_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				37B4BEB907254055CC428B0C0BA6EDB0 /* Info.plist */,
+				F816CD1B9439683BA493955D2142C03D /* Pods-HoldToClickButton_Tests.modulemap */,
+				7A9358FD4DBA9F9381AE6BEBE64A0DA6 /* Pods-HoldToClickButton_Tests-acknowledgements.markdown */,
+				FEC14F995CD3B22A07D94F00CBC7CEDA /* Pods-HoldToClickButton_Tests-acknowledgements.plist */,
+				0950B10FCD522615B1112DDD24F44129 /* Pods-HoldToClickButton_Tests-dummy.m */,
+				1082CE5283601A0F8237463C702BDF2F /* Pods-HoldToClickButton_Tests-frameworks.sh */,
+				05FF04F705B47D97AE245032D7081FAC /* Pods-HoldToClickButton_Tests-resources.sh */,
+				A10E15FDBCA94AD572E43FF1561A6458 /* Pods-HoldToClickButton_Tests-umbrella.h */,
+				9DE4F08ABC12318BAD03FCDD78CBAED3 /* Pods-HoldToClickButton_Tests.debug.xcconfig */,
+				45864141AAEF303E041C016CDE4BDE94 /* Pods-HoldToClickButton_Tests.release.xcconfig */,
+			);
+			name = "Pods-HoldToClickButton_Tests";
+			path = "Target Support Files/Pods-HoldToClickButton_Tests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E412045E7FBA1934EC511C812A867E1B /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				7F5AE8490F6E865407E10AF8774D8846 /* Products */,
+				97AF580CB45B59236A0AF05D295B755E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F5AE8490F6E865407E10AF8774D8846 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9ADA084372668634D7FFC57CAEDBF /* HoldToClickButton.framework */,
+				B8B1676B2A6062523A1DBF85F870AA39 /* Pods_HoldToClickButton_Example.framework */,
+				C0D383444303621DCD8519CDC0CC6F0B /* Pods_HoldToClickButton_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97AF580CB45B59236A0AF05D295B755E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE9CD359DF82E0CA4BF6B5EF160CB08C /* Pods-HoldToClickButton_Example */,
+				74174FE9D4593E4B91F8E65CA355653A /* Pods-HoldToClickButton_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A343BDD244D7CF7D1C0AA7784A829017 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C852C85E0D3B3467D99929ABF7E14C56 /* HoldToClickButton.modulemap */,
+				8366C95CFDF7E2AA56111B9BE6E8E15F /* HoldToClickButton.xcconfig */,
+				7B8128506123FB6AE97C289DAEE0F671 /* HoldToClickButton-dummy.m */,
+				BB5808194E1D21C65A957B0553AD02D6 /* HoldToClickButton-prefix.pch */,
+				2271FBE420E1E56902B4E94B6ABD20E5 /* HoldToClickButton-umbrella.h */,
+				FB8B87EDBEEE22C0C1A5B99F8790A524 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HoldToClickButton";
+			sourceTree = "<group>";
+		};
+		AE9CD359DF82E0CA4BF6B5EF160CB08C /* Pods-HoldToClickButton_Example */ = {
+			isa = PBXGroup;
+			children = (
+				ED62A93A8936F8554A77406BEDC9919C /* Info.plist */,
+				BEE406D9C02B9C4181B861EEB692AAD5 /* Pods-HoldToClickButton_Example.modulemap */,
+				1B2A922CBC6861A8E8211C4E71F24BD6 /* Pods-HoldToClickButton_Example-acknowledgements.markdown */,
+				BD171E6F9672B07AA63C6F6A0B873F43 /* Pods-HoldToClickButton_Example-acknowledgements.plist */,
+				7CB269699B97C568670B81939C679EF4 /* Pods-HoldToClickButton_Example-dummy.m */,
+				2947261A9AF081A1CF28E3CB09BE7D41 /* Pods-HoldToClickButton_Example-frameworks.sh */,
+				3B4E60C0EF3130EAD89C966D3B1A87B8 /* Pods-HoldToClickButton_Example-resources.sh */,
+				2B98B9D4A21B438778BD1C7694C3654A /* Pods-HoldToClickButton_Example-umbrella.h */,
+				E21C22C0F87CB625F47F8644DC5F62C7 /* Pods-HoldToClickButton_Example.debug.xcconfig */,
+				87DDB6F1BF42795B192C76A0CF7D15F0 /* Pods-HoldToClickButton_Example.release.xcconfig */,
+			);
+			name = "Pods-HoldToClickButton_Example";
+			path = "Target Support Files/Pods-HoldToClickButton_Example";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E412045E7FBA1934EC511C812A867E1B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCC2800A15029CD30A75D7CA4D310207 /* HoldToClickButton */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FCC2800A15029CD30A75D7CA4D310207 /* HoldToClickButton */ = {
+			isa = PBXGroup;
+			children = (
+				615FA4AB9866FAA8198CAFB1D066AD74 /* Pod */,
+				A343BDD244D7CF7D1C0AA7784A829017 /* Support Files */,
+				20FE44EF21B8327000E04306 /* HoldToClickButton.swift */,
+			);
+			name = HoldToClickButton;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		170574C9CAC45DA6C1F4BFA9BAE5E8C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92762F03652A6CA7DF2DD510111CFC7 /* HoldToClickButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD0C5C67E9C45A063937EAA5179D413 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A450193FDB3A9B700EF01B07B591C39 /* Pods-HoldToClickButton_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDD7691D9CDDFE12B547012162D17C4D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6BA9E3BD70D84969C0E0A3911269D7 /* Pods-HoldToClickButton_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7CC6A1EEE4D967B566314D28E20E6013 /* HoldToClickButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE8D004974B1D5F17C1601AF514B484 /* Build configuration list for PBXNativeTarget "HoldToClickButton" */;
+			buildPhases = (
+				170574C9CAC45DA6C1F4BFA9BAE5E8C1 /* Headers */,
+				8354CB14320F7AD3C278B37C4DB5BBF1 /* Sources */,
+				451036185F7B83FA087AD0679287ECF3 /* Frameworks */,
+				C66AFEF41B37E221ACF1E2E352C9DA8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoldToClickButton;
+			productName = HoldToClickButton;
+			productReference = E9E9ADA084372668634D7FFC57CAEDBF /* HoldToClickButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7CD2366E9F34F0D2012E6DF0A9CA0EBA /* Pods-HoldToClickButton_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE72D20D21041E2FE5EE26020648192A /* Build configuration list for PBXNativeTarget "Pods-HoldToClickButton_Tests" */;
+			buildPhases = (
+				FDD7691D9CDDFE12B547012162D17C4D /* Headers */,
+				7563BA889F5E0D6AA11188A5B60FC5A0 /* Sources */,
+				F309D8D92D2F2A132895962350979920 /* Frameworks */,
+				EA5856D46F3D8746D1AB49301BEBACF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A009A23254BDDA37EF8049140780A168 /* PBXTargetDependency */,
+			);
+			name = "Pods-HoldToClickButton_Tests";
+			productName = "Pods-HoldToClickButton_Tests";
+			productReference = C0D383444303621DCD8519CDC0CC6F0B /* Pods_HoldToClickButton_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D7575409F16BA3E1515C0E8489943E47 /* Pods-HoldToClickButton_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B05CCC90413015605E4D9448931B7E88 /* Build configuration list for PBXNativeTarget "Pods-HoldToClickButton_Example" */;
+			buildPhases = (
+				9CD0C5C67E9C45A063937EAA5179D413 /* Headers */,
+				4F171537D5662D807C7A2A2AE043AD38 /* Sources */,
+				6E253AA1ABA50236FE05FC18614BAC52 /* Frameworks */,
+				98578067B933739C3E116DECABD3B7AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				696BF2A074E345158191F30827289B7F /* PBXTargetDependency */,
+			);
+			name = "Pods-HoldToClickButton_Example";
+			productName = "Pods-HoldToClickButton_Example";
+			productReference = B8B1676B2A6062523A1DBF85F870AA39 /* Pods_HoldToClickButton_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					7CC6A1EEE4D967B566314D28E20E6013 = {
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 7F5AE8490F6E865407E10AF8774D8846 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CC6A1EEE4D967B566314D28E20E6013 /* HoldToClickButton */,
+				D7575409F16BA3E1515C0E8489943E47 /* Pods-HoldToClickButton_Example */,
+				7CD2366E9F34F0D2012E6DF0A9CA0EBA /* Pods-HoldToClickButton_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98578067B933739C3E116DECABD3B7AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66AFEF41B37E221ACF1E2E352C9DA8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA5856D46F3D8746D1AB49301BEBACF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F171537D5662D807C7A2A2AE043AD38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6245764684AC166F858FED633C8D8A5 /* Pods-HoldToClickButton_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7563BA889F5E0D6AA11188A5B60FC5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E029CEA93A7F9C1A30EE5FCD09908EA0 /* Pods-HoldToClickButton_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8354CB14320F7AD3C278B37C4DB5BBF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20FE44F021B8327000E04306 /* HoldToClickButton.swift in Sources */,
+				47A5497033B037925A3256985D34C240 /* HoldToClickButton-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		696BF2A074E345158191F30827289B7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HoldToClickButton;
+			target = 7CC6A1EEE4D967B566314D28E20E6013 /* HoldToClickButton */;
+			targetProxy = 25B309E8CF501E3F87C3EEE8A870357C /* PBXContainerItemProxy */;
+		};
+		A009A23254BDDA37EF8049140780A168 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-HoldToClickButton_Example";
+			target = D7575409F16BA3E1515C0E8489943E47 /* Pods-HoldToClickButton_Example */;
+			targetProxy = E5D129A4403003B6CEE2218A2FB0FF20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3E01385B760E32F9ECD9783AE4DC2871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45864141AAEF303E041C016CDE4BDE94 /* Pods-HoldToClickButton_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HoldToClickButton_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HoldToClickButton_Tests/Pods-HoldToClickButton_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56A05ADD3BABDA1B56D1F979845809B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8429C6D672E84536DDCAB79B53E32279 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8366C95CFDF7E2AA56111B9BE6E8E15F /* HoldToClickButton.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HoldToClickButton/HoldToClickButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HoldToClickButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HoldToClickButton/HoldToClickButton.modulemap";
+				PRODUCT_MODULE_NAME = HoldToClickButton;
+				PRODUCT_NAME = HoldToClickButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DE85575B2E8C9DD0A685C87DFAE7CD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE4F08ABC12318BAD03FCDD78CBAED3 /* Pods-HoldToClickButton_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HoldToClickButton_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HoldToClickButton_Tests/Pods-HoldToClickButton_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEFDB93BF207328A04F1220475D02C3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C6EF10A64639850D560F4C2233055C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DDB6F1BF42795B192C76A0CF7D15F0 /* Pods-HoldToClickButton_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HoldToClickButton_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HoldToClickButton_Example/Pods-HoldToClickButton_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DDAC2A46FCB1E198E8FEF84DD5BFA4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E21C22C0F87CB625F47F8644DC5F62C7 /* Pods-HoldToClickButton_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HoldToClickButton_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HoldToClickButton_Example/Pods-HoldToClickButton_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE8EDFE58A0A1FED2B5019AD91F87278 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8366C95CFDF7E2AA56111B9BE6E8E15F /* HoldToClickButton.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HoldToClickButton/HoldToClickButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HoldToClickButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HoldToClickButton/HoldToClickButton.modulemap";
+				PRODUCT_MODULE_NAME = HoldToClickButton;
+				PRODUCT_NAME = HoldToClickButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEFDB93BF207328A04F1220475D02C3B /* Debug */,
+				56A05ADD3BABDA1B56D1F979845809B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B05CCC90413015605E4D9448931B7E88 /* Build configuration list for PBXNativeTarget "Pods-HoldToClickButton_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDAC2A46FCB1E198E8FEF84DD5BFA4E1 /* Debug */,
+				C6EF10A64639850D560F4C2233055C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE72D20D21041E2FE5EE26020648192A /* Build configuration list for PBXNativeTarget "Pods-HoldToClickButton_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE85575B2E8C9DD0A685C87DFAE7CD3 /* Debug */,
+				3E01385B760E32F9ECD9783AE4DC2871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE8D004974B1D5F17C1601AF514B484 /* Build configuration list for PBXNativeTarget "HoldToClickButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8429C6D672E84536DDCAB79B53E32279 /* Debug */,
+				EE8EDFE58A0A1FED2B5019AD91F87278 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

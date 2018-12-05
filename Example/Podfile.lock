@@ -1,0 +1,16 @@
+PODS:
+  - HoldToClickButton (0.1.0)
+
+DEPENDENCIES:
+  - HoldToClickButton (from `../`)
+
+EXTERNAL SOURCES:
+  HoldToClickButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HoldToClickButton: c3405b10e249339752dae5155a3775535a2ca53b
+
+PODFILE CHECKSUM: b09221770085393dc7f5a969d761ef3000566ccc
+
+COCOAPODS: 1.5.3

@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		132894DDCA969A0FC5CEC49C /* Pods-HoldToClickButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoldToClickButton_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HoldToClickButton_Example/Pods-HoldToClickButton_Example.release.xcconfig"; sourceTree = "<group>"; };
 		25261C0E74FE2FED30AA195C /* Pods_HoldToClickButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoldToClickButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3598D2B71A009B0A9B1ADD86 /* HoldToClickButton.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HoldToClickButton.podspec; path = ../HoldToClickButton.podspec; sourceTree = "<group>"; };
+		3598D2B71A009B0A9B1ADD86 /* HoldToClickButton.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HoldToClickButton.podspec; path = ../HoldToClickButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* HoldToClickButton_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoldToClickButton_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +42,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		774131F3398CCC3120FD1D7F /* Pods-HoldToClickButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoldToClickButton_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoldToClickButton_Tests/Pods-HoldToClickButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8C39CF2DF9CCBC22E6255582 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8C39CF2DF9CCBC22E6255582 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CE1F498F2F8EFAF04FA264D9 /* Pods_HoldToClickButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoldToClickButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB198D888A7DD03B1F894ABE /* Pods-HoldToClickButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoldToClickButton_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoldToClickButton_Example/Pods-HoldToClickButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EA48496292BEBBE402FA7F54 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		EA48496292BEBBE402FA7F54 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FA72E7742A446C3F610E7014 /* Pods-HoldToClickButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoldToClickButton_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HoldToClickButton_Tests/Pods-HoldToClickButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

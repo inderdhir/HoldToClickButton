@@ -1,0 +1,6 @@
+framework module HoldToClickButton {
+  umbrella header "HoldToClickButton-umbrella.h"
+
+  export *
+  module * { export * }
+}
