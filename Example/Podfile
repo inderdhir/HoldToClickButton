@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HoldToClickButton_Example' do
+  pod 'HoldToClickButton', :path => '../'
+
+  target 'HoldToClickButton_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
