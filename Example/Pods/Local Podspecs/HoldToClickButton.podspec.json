@@ -1,8 +1,8 @@
 {
   "name": "HoldToClickButton",
-  "version": "0.1.0",
-  "summary": "A short description of HoldToClickButton.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.1.1",
+  "summary": "Custom UIButton for iOS that the user needs to hold to click with an error state",
+  "description": "'Custom UIButton for iOS that the user needs to hold to click with an error state'",
   "homepage": "https://github.com/Inder Dhir/HoldToClickButton",
   "license": {
     "type": "MIT",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/Inder Dhir/HoldToClickButton.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "HoldToClickButton/Classes/**/*"
 }

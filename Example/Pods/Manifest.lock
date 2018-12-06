@@ -1,5 +1,5 @@
 PODS:
-  - HoldToClickButton (0.1.0)
+  - HoldToClickButton (0.1.1)
 
 DEPENDENCIES:
   - HoldToClickButton (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HoldToClickButton: c3405b10e249339752dae5155a3775535a2ca53b
+  HoldToClickButton: 8eb83bd1947eb2b0de0ec35c275a0d82d29c9224
 
 PODFILE CHECKSUM: b09221770085393dc7f5a969d761ef3000566ccc
 
