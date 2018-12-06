@@ -21,12 +21,12 @@ Pod::Spec.new do |s|
 'Custom UIButton for iOS that the user needs to hold to click with an optional cancel animation'
                        DESC
 
-  s.homepage         = 'https://github.com/Inder Dhir/HoldToClickButton'
+  s.homepage         = 'https://github.com/inderdhir/HoldToClickButton'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Inder Dhir' => 'inderdhir@hotmail.com' }
-  s.source           = { :git => 'https://github.com/Inder Dhir/HoldToClickButton.git', :tag => s.version.to_s }
-
+  s.source           = { :git => 'https://github.com/inderdhir/HoldToClickButton.git', :tag => s.version.to_s }
+  s.swift_version    = '3.2'
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'HoldToClickButton/Classes/**/*'

@@ -34,7 +34,7 @@ public class HoldToClickButton: UIButton {
     public var animationDuration: TimeInterval = 1.5
 
     /// Options for progress animation. Default: curveEaseInOut
-    public var animationOptions: UIView.AnimationOptions = .curveEaseInOut
+    public var animationOptions: UIViewAnimationOptions = .curveEaseInOut
 
     /// Toggle cancel 'shake' animation. Default: true
     public var isCancelAnimationEnabled = true
