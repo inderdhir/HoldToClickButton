@@ -9,17 +9,8 @@
 import UIKit
 import HoldToClickButton
 
-private class HoldToClickFillView: UIView {
+private class HoldToClickButton: UIButton {
 
-    private var fillView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .orange
-        return view
-    }()
-
-    private var path: UIBezierPath?
-
-    private var startFrame: CGRect!
     private var trailing: NSLayoutConstraint!
 
     private var isAnimating = false {
@@ -28,7 +19,14 @@ private class HoldToClickFillView: UIView {
                 trailing.isActive = true
                 UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
                     self.layoutIfNeeded()
-                }, completion: nil)
+                }, completion: { [weak self] completed in
+                    if completed {
+                        print("Completed")
+                    } else {
+                        self?.playCancelAnimation()
+                        print("Completed")
+                    }
+                })
             } else {
                 trailing.isActive = false
                 fillView.layer.removeAllAnimations()
@@ -37,26 +35,43 @@ private class HoldToClickFillView: UIView {
         }
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .clear
+    private var fillView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .orange
+        return view
+    }()
 
-        startFrame = frame
+    public init() {
+        super.init(frame: .zero)
 
         addSubview(fillView)
+        sendSubview(toBack: fillView)
+
+        backgroundColor = .clear
 
         fillView.translatesAutoresizingMaskIntoConstraints = false
         fillView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-
-        trailing = fillView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        trailing.isActive = false
-
         fillView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         fillView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        trailing = fillView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        trailing.isActive = false
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+
+    private func playCancelAnimation() {
+        let midX = center.x
+        let midY = center.y
+
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.15
+        animation.repeatCount = 1
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: midX - 20, y: midY)
+        animation.toValue = CGPoint(x: midX + 20, y: midY)
+        layer.add(animation, forKey: "position")
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,37 +81,12 @@ private class HoldToClickFillView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isAnimating = false
     }
-
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-    }
-}
-
-private class HoldToClickButtonExtension: UIButton {
-    private let fillView = HoldToClickFillView()
-
-    public init() {
-        super.init(frame: .zero)
-
-        addSubview(fillView)
-        sendSubview(toBack: fillView)
-
-        fillView.translatesAutoresizingMaskIntoConstraints = false
-        fillView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        fillView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        fillView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        fillView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError()
-    }
 }
 
 class ViewController: UIViewController {
 
-    private let holdToClickButton: HoldToClickButtonExtension = {
-        let button = HoldToClickButtonExtension()
+    private let holdToClickButton: HoldToClickButton = {
+        let button = HoldToClickButton()
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitle("Hide A Memory", for: .normal)
         button.setTitleColor(.black, for: .normal)
