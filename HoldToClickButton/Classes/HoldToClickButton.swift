@@ -36,6 +36,9 @@ public class HoldToClickButton: UIButton {
     /// Options for progress animation. Default: curveEaseInOut
     public var animationOptions: UIView.AnimationOptions = .curveEaseInOut
 
+    /// Toggle cancel 'shake' animation. Default: true
+    public var isCancelAnimationEnabled = true
+
     // MARK: Private
 
     /// The trailing constraint of the progressView, used to animate progress
@@ -59,8 +62,8 @@ public class HoldToClickButton: UIButton {
                         if completed {
                             self?.delegate?.didCompleteHoldToClick()
                         } else {
-                            self?.playCancelAnimation()
                             self?.delegate?.didCancelHoldToClick()
+                            if self?.isCancelAnimationEnabled == true { self?.playCancelAnimation() }
                         }
                     })
             } else {
