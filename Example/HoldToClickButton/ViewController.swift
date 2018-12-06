@@ -11,23 +11,6 @@ import HoldToClickButton
 
 private class HoldToClickFillView: UIView {
 
-    private var isHolding = false {
-        didSet {
-            print("\(isHolding)")
-        }
-    }
-
-    private var startTime: Date? {
-        didSet { setNeedsDisplay() }
-    }
-    private let time: TimeInterval = 3
-
-    private var fillColor = UIColor.orange {
-        didSet { setNeedsDisplay() }
-    }
-
-    private var fillTimer: Timer?
-
     private var fillView: UIView = {
         let view = UIView()
         view.backgroundColor = .orange
@@ -42,15 +25,14 @@ private class HoldToClickFillView: UIView {
     private var isAnimating = false {
         didSet {
             if isAnimating {
-                UIView.animate(withDuration: 1.5, delay: 0, options: .curveLinear, animations: {
-                    self.trailing.isActive = true
-
-                    self.fillView.setNeedsLayout()
-                    self.fillView.layoutIfNeeded()
+                trailing.isActive = true
+                UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
+                    self.layoutIfNeeded()
                 }, completion: nil)
             } else {
                 trailing.isActive = false
                 fillView.layer.removeAllAnimations()
+                setNeedsLayout()
             }
         }
     }
@@ -61,7 +43,6 @@ private class HoldToClickFillView: UIView {
 
         startFrame = frame
 
-//        fillView = UIView(frame: startFrame)
         addSubview(fillView)
 
         fillView.translatesAutoresizingMaskIntoConstraints = false
@@ -79,60 +60,16 @@ private class HoldToClickFillView: UIView {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !isAnimating {
-            isAnimating = true
-        }
-//        let animation = CABasicAnimation(keyPath: "frame.width")
-//        animation.fromValue = startFrame
-//        animation.toValue = frame
-//        animation.duration = 3
-//        fillView.add(animation, forKey: nil)
-
-//        startTime = Date()
-//        fillTimer = Timer.scheduledTimer(
-//            timeInterval: 0.016,
-//            target: self,
-//            selector: #selector(fillView),
-//            userInfo: nil,
-//            repeats: true
-//        )
-//        fillTimer?.fire()
+        if !isAnimating { isAnimating = true }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isAnimating = false
-//        fillView.layer.removeAllAnimations()
-
-//        startTime = nil
-//
-//        fillTimer?.invalidate()
-//        fillTimer = nil
-//
-//        setNeedsDisplay()
     }
 
     override func draw(_ rect: CGRect) {
-//        if let startTime = startTime {
-//            let elapsed = Date().timeIntervalSince(startTime)
-//            if elapsed < time {
-//                let percent = CGFloat(elapsed / time)
-//                fillColor.setFill()
-//
-//                let fillRect = CGRect(x: rect.minX, y: rect.minY, width: rect.width * percent, height: rect.height)
-//                path = UIBezierPath(rect: fillRect)
-//                path?.fill()
-//            } else {
-//                fillTimer?.invalidate()
-//                fillTimer = nil
-//            }
-//        } else {
-//            path = nil
-//        }
+        super.draw(rect)
     }
-
-//    @objc func fillView() {
-//        setNeedsDisplay()
-//    }
 }
 
 private class HoldToClickButtonExtension: UIButton {
@@ -171,7 +108,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         view.addSubview(holdToClickButton)
 
@@ -185,10 +121,5 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         holdToClickButton.layer.cornerRadius = holdToClickButton.frame.height / 2
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
