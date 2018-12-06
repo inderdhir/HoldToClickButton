@@ -1,9 +1,5 @@
 # HoldToClickButton
 
-[![CI Status](https://img.shields.io/travis/Inder Dhir/HoldToClickButton.svg?style=flat)](https://travis-ci.org/Inder Dhir/HoldToClickButton)
-[![Version](https://img.shields.io/cocoapods/v/HoldToClickButton.svg?style=flat)](https://cocoapods.org/pods/HoldToClickButton)
-[![License](https://img.shields.io/cocoapods/l/HoldToClickButton.svg?style=flat)](https://cocoapods.org/pods/HoldToClickButton)
-[![Platform](https://img.shields.io/cocoapods/p/HoldToClickButton.svg?style=flat)](https://cocoapods.org/pods/HoldToClickButton)
 
 ## Example
 
