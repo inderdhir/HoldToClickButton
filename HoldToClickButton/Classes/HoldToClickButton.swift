@@ -7,22 +7,35 @@
 
 import UIKit
 
+public protocol HoldToClickButtonDelegate: class {
+    func didStartHoldingToClick()
+    func didStopHoldingToClick()
+    func didCompleteHoldToClick()
+    func didCancelHoldToClick()
+}
+
 public class HoldToClickButton: UIButton {
+
+    // MARK: Public
+
+    public weak var delegate: HoldToClickButtonDelegate?
+
+    // MARK: Private
 
     private var trailing: NSLayoutConstraint!
 
-    private var isAnimating = false {
+    private var isHolding = false {
         didSet {
-            if isAnimating {
+            if isHolding {
                 trailing.isActive = true
                 UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
                     self.layoutIfNeeded()
                 }, completion: { [weak self] completed in
                     if completed {
-                        print("Completed")
+                        self?.delegate?.didCompleteHoldToClick()
                     } else {
                         self?.playCancelAnimation()
-                        print("Completed")
+                        self?.delegate?.didCancelHoldToClick()
                     }
                 })
             } else {
@@ -33,19 +46,15 @@ public class HoldToClickButton: UIButton {
         }
     }
 
-    private var fillView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .orange
-        return view
-    }()
+    private var fillView = UIView()
 
-    public init() {
+    public init(fillColor: UIColor) {
         super.init(frame: .zero)
+
+        fillView.backgroundColor = fillColor
 
         addSubview(fillView)
         sendSubview(toBack: fillView)
-
-        backgroundColor = .clear
 
         fillView.translatesAutoresizingMaskIntoConstraints = false
         fillView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -56,27 +65,30 @@ public class HoldToClickButton: UIButton {
     }
 
     public required init?(coder aDecoder: NSCoder) {
-        fatalError()
+        super.init(coder: aDecoder)
     }
 
     private func playCancelAnimation() {
         let midX = center.x
         let midY = center.y
-
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.15
-        animation.repeatCount = 1
-        animation.autoreverses = true
-        animation.fromValue = CGPoint(x: midX - 20, y: midY)
-        animation.toValue = CGPoint(x: midX + 20, y: midY)
-        layer.add(animation, forKey: "position")
+        let cancelAnimation = CABasicAnimation(keyPath: "position")
+        cancelAnimation.duration = 0.15
+        cancelAnimation.repeatCount = 1
+        cancelAnimation.autoreverses = true
+        cancelAnimation.fromValue = CGPoint(x: midX - 20, y: midY)
+        cancelAnimation.toValue = CGPoint(x: midX + 20, y: midY)
+        layer.add(cancelAnimation, forKey: "cancelAnimation")
     }
 
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !isAnimating { isAnimating = true }
+        if !isHolding {
+            isHolding = true
+            delegate?.didStartHoldingToClick()
+        }
     }
 
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isAnimating = false
+        isHolding = false
+        delegate?.didStopHoldingToClick()
     }
 }
