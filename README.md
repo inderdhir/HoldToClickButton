@@ -1,6 +1,6 @@
 # HoldToClickButton
 
-![](name-of-giphy.gif)
+![](example.gif)
 
 ## Example
 
