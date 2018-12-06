@@ -1,6 +1,6 @@
 # HoldToClickButton
 
-![](example.gif)
+![Example](example.gif)
 
 ## Example
 
