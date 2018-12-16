@@ -39,10 +39,16 @@ public class HoldToClickButton: UIButton {
     /// Toggle cancel 'shake' animation. Default: true
     public var isCancelAnimationEnabled = true
 
+    /// Toggle Error haptic feedback. Default: true
+    public var isErrorHapticFeedbackEnabled = true
+
     // MARK: Private
 
     /// The trailing constraint of the progressView, used to animate progress
     private var trailingConstraint: NSLayoutConstraint!
+
+    /// Haptic feedback
+    private lazy var feedbackGenerator = UINotificationFeedbackGenerator()
 
     /// Keeps track of whether the button is being held or not. Used to trigger progress and animations
     private var isHolding = false {
@@ -63,6 +69,8 @@ public class HoldToClickButton: UIButton {
                             self?.delegate?.didCompleteHoldToClick()
                         } else {
                             self?.delegate?.didCancelHoldToClick()
+
+                            self?.generateErrorFeedbackIfNecessary()
                             if self?.isCancelAnimationEnabled == true { self?.playCancelAnimation() }
                         }
                     })
@@ -119,5 +127,11 @@ public class HoldToClickButton: UIButton {
 
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isHolding = false
+    }
+
+    private func generateErrorFeedbackIfNecessary() {
+        if isErrorHapticFeedbackEnabled {
+            feedbackGenerator.notificationOccurred(.error)
+        }
     }
 }
