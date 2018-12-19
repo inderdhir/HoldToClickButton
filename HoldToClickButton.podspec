@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoldToClickButton'
-  s.version          = '1.0'
+  s.version          = '1.0.1'
   s.summary          = 'Custom UIButton for iOS that the user needs to hold to click with an optional cancel animation'
 
 # This description is used to generate tags and improve search results.
