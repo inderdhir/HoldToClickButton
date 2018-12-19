@@ -110,15 +110,10 @@ public class HoldToClickButton: UIButton {
 
     /// Play the cancel animation when the user stops holding the button
     private func playCancelAnimation() {
-        let midX = center.x
-        let midY = center.y
-        let cancelAnimation = CABasicAnimation(keyPath: "position")
-        cancelAnimation.duration = 0.15
-        cancelAnimation.repeatCount = 1
-        cancelAnimation.autoreverses = true
-        cancelAnimation.fromValue = CGPoint(x: midX - 20, y: midY)
-        cancelAnimation.toValue = CGPoint(x: midX + 20, y: midY)
-        layer.add(cancelAnimation, forKey: "cancelAnimation")
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.duration = 0.5
+        animation.values = [-20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0]
+        layer.add(animation, forKey: "cancelAnimation")
     }
 
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
