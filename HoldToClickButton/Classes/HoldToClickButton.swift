@@ -34,7 +34,7 @@ public class HoldToClickButton: UIButton {
     public var animationDuration: TimeInterval = 1.5
 
     /// Options for progress animation. Default: curveEaseInOut
-    public var animationOptions: UIViewAnimationOptions = .curveEaseInOut
+    public var animationOptions: UIView.AnimationOptions = .curveEaseInOut
 
     /// Toggle cancel 'shake' animation. Default: true
     public var isCancelAnimationEnabled = true
@@ -93,7 +93,7 @@ public class HoldToClickButton: UIButton {
         progressView.backgroundColor = fillColor
 
         addSubview(progressView)
-        sendSubview(toBack: progressView)
+        sendSubviewToBack(progressView)
 
         progressView.translatesAutoresizingMaskIntoConstraints = false
         progressView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
