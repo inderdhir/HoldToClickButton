@@ -1,6 +1,6 @@
 {
   "name": "HoldToClickButton",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "summary": "Custom UIButton for iOS that the user needs to hold to click with an optional cancel animation",
   "description": "'Custom UIButton for iOS that the user needs to hold to click with an optional cancel animation'",
   "homepage": "https://github.com/inderdhir/HoldToClickButton",
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/inderdhir/HoldToClickButton.git",
-    "tag": "1.1.0"
+    "tag": "1.1.1"
   },
-  "swift_version": "4.2",
+  "swift_versions": "5.0",
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "HoldToClickButton/Classes/**/*"
+  "source_files": "HoldToClickButton/Classes/**/*",
+  "swift_version": "5.0"
 }
