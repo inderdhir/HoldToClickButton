@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoldToClickButton'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.summary          = 'Custom UIButton for iOS that the user needs to hold to click with an optional cancel animation'
 
 # This description is used to generate tags and improve search results.
@@ -22,20 +22,10 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/inderdhir/HoldToClickButton'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Inder Dhir' => 'inderdhir@hotmail.com' }
   s.source           = { :git => 'https://github.com/inderdhir/HoldToClickButton.git', :tag => s.version.to_s }
   s.swift_version    = '5.0'
-  s.ios.deployment_target = '10.0'
-
-  s.source_files = 'HoldToClickButton/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HoldToClickButton' => ['HoldToClickButton/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.ios.deployment_target = '11.0'
+  s.source_files = 'Sources/HoldToClickButton/**/*'
 end
