@@ -28,6 +28,11 @@ final class HoldToClickViewModel: ObservableObject {
         case none, holding, canceling
     }
     
+    deinit {
+        holdTask?.cancel()
+        cancelTask?.cancel()
+    }
+    
     func setup(
         holdDuration: TimeInterval,
         cancelDuration: TimeInterval,
