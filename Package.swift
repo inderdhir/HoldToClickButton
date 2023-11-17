@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "HoldToClickButton",
-    platforms: [.iOS(.v13), .macOS(.v11)],
+    platforms: [.iOS(.v14), .macOS(.v13), .watchOS(.v7)],
     products: [
         .library(
             name: "HoldToClickButton",

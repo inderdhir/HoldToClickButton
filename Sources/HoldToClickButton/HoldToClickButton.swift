@@ -1,174 +1,118 @@
 //
 //  HoldToClickButton.swift
-//  
+//
 //
 //  Created by Inder Dhir on 11/20/22.
 //
 
 import SwiftUI
 
-struct HoldToClickButton<Label>: View where Label: View {
+public struct HoldToClickButton<Label>: View where Label: View {
     
     private let fillColor: Color
+    private let borderColor: Color
+    private let borderWidth: CGFloat
     private let holdDuration: TimeInterval
+    private let cancelDuration: TimeInterval
     private let label: () -> Label
     private let onHoldBegin: (() -> Void)?
     private let onHoldEnd: (() -> Void)?
     private let onHoldCancel: (() -> Void)?
-    
-    @State var onHolding = false
-    @State var currentHoldTime: TimeInterval = 0
-    @State var progressWidth: CGFloat = 0
-    
-    let timer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
-    @State var isCanceling = false
-    @State var cancelHoldTime: TimeInterval = 0
-    @State var cancelTime = 0.5
-    @State var xOffset: CGFloat = 0
-    
+    @StateObject private var viewModel = HoldToClickViewModel()
     
     public init(
-        fillColor: Color,
+        fillColor: Color = Color.orange,
+        borderColor: Color = Color.black,
+        borderWidth: CGFloat = 2.0,
         holdDuration: TimeInterval = 1.5,
+        cancelDuration: TimeInterval = 0.3,
         label: @escaping () -> Label,
         onHoldBegin: (() -> Void)? = nil,
         onHoldEnd: (() -> Void)? = nil,
         onHoldCancel: (() -> Void)? = nil
     ) {
         self.fillColor = fillColor
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
         self.holdDuration = holdDuration
+        self.cancelDuration = cancelDuration
         self.label = label
         self.onHoldBegin = onHoldBegin
         self.onHoldEnd = onHoldEnd
         self.onHoldCancel = onHoldCancel
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometryReader in
-            ZStack {
-                HStack {
-                    fillColor
-                        .frame(width: progressWidth)
-                    
-                    Spacer()
-                }
-                
-                label()
-            }
-            // Ensures that the following gesture works on the outer ZStack
-            .contentShape(Rectangle())
-            .animation(isCanceling ? Animation.easeInOut(duration: 0.15).repeatForever(autoreverses: true) : nil)
-            .onReceive(timer) { _ in
-                if isCanceling {
-                    updateCancelState()
-                    cancelHoldAnimation()
-                } else if onHolding {
-                    updateHoldState()
-                }
-            }
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { value in
-                        guard !onHolding && !isCanceling else { return }
-                        
-                        withAnimation(.easeInOut(duration: holdDuration)) {
-                            progressWidth = geometryReader.size.width
-                        }
-                        
-                        onHolding = true
-                        onHoldBegin?()
-                    }
-                    .onEnded { value in
-                        onHolding = false
-                        cancelHoldAnimation()
-
-                        if hasMetHoldThreshold {
-//                            onHoldEnd?()
-                        } else {
-                            playCancelAnimation()
-                        }
-                    },
-                including: .all
-            )
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .offset(x: xOffset)
-        }
-    }
-    
-    var hasMetCancelThreshold: Bool {
-        cancelHoldTime >= cancelTime
-    }
-    
-    var hasMetHoldThreshold: Bool {
-        currentHoldTime >= holdDuration
-    }
-    
-    private func updateCancelState() {
-        if hasMetCancelThreshold {
-            cancelCancelAnimation()
-        } else {
-            cancelHoldTime += 0.05
-        }
-    }
-    
-    private func updateHoldState() {
-        if hasMetHoldThreshold {
-            cancelHoldAnimation()
-            onHoldEnd?()
+            let roundedRect = RoundedRectangle(cornerRadius: geometryReader.size.height * 0.5)
             
-            currentHoldTime = 0
+            Group {
+                label()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(
+                        fillColor
+                            .animation(
+                                viewModel.holdState == .holding ? .easeInOut(duration: holdDuration) : .default,
+                                value: viewModel.holdState
+                            )
+                            .offset(x: fillXOffset(maxWidth: geometryReader.size.width))
+                            .frame(maxWidth: viewModel.holdState == .holding ? .infinity : 0, alignment: .leading)
+                    )
+                    // Ensures that the following gesture works on the outer ZStack
+                    .contentShape(Rectangle())
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { value in
+                                viewModel.onDragGestureChange(
+                                    value: value,
+                                    maxWidth: geometryReader.size.width
+                                )
+                            }
+                            .onEnded { _ in
+                                viewModel.onDragEnd()
+                            }
+                    )
+            }
+            .clipShape(roundedRect)
+            .overlay(roundedRect.strokeBorder(borderColor, lineWidth: borderWidth))
+            .offset(x: viewModel.cancelXOffset, y: 0)
+            .animation(
+                viewModel.holdState == .canceling ?
+                    .easeOut(duration: cancelDuration / 2)
+                    .repeatForever(autoreverses: true).speed(4) : .default,
+                value: viewModel.holdState
+            )
+        }
+        .onAppear {
+            viewModel.setup(
+                holdDuration: holdDuration,
+                cancelDuration: cancelDuration,
+                onHoldBegin: onHoldBegin,
+                onHoldEnd: onHoldEnd,
+                onHoldCancel: onHoldCancel
+            )
+        }
+    }
+    
+    private func fillXOffset(maxWidth: CGFloat) -> CGFloat {
+        if viewModel.holdState == .holding {
+            0
+        } else if viewModel.holdState == .canceling {
+            -(maxWidth * 0.5) - 100
         } else {
-            currentHoldTime += 0.05
-        }
-    }
-    
-    func cancelHoldAnimation() {
-        var transaction = Transaction()
-        transaction.disablesAnimations = true
-        withTransaction(transaction) {
-            progressWidth = 0
-        }
-    }
-    
-    func playCancelAnimation() {
-        isCanceling = true
-        
-        withAnimation {
-            xOffset = -15
-        }
-    }
-    
-    func cancelCancelAnimation() {
-        isCanceling = false
-        cancelHoldTime = 0
-
-        var transaction = Transaction()
-        transaction.disablesAnimations = true
-        withTransaction(transaction) {
-            xOffset = 0
+            -(maxWidth * 0.5)
         }
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        if #available(iOS 15.0, *) {
-            HoldToClickButton(
-                fillColor: .blue,
-                label: {
-                    Text("Hold To Click")
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                }, onHoldBegin: {
-                }, onHoldEnd: {
-                }
-            )
-            .cornerRadius(25)
-            .overlay(content: {
-                Capsule(style: .continuous)
-                    .stroke(Color.black, lineWidth: 2)
-            })
-            .frame(width: 320, height: 50)
+#Preview {
+    HoldToClickButton(
+        label: {
+            Text("Hold To Click")
+                .fontWeight(.bold)
+                .foregroundColor(.black)
         }
-    }
+    )
+    .frame(width: 320, height: 50)
+    .padding()
 }
