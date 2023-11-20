@@ -1,132 +1,118 @@
 //
 //  HoldToClickButton.swift
-//  HoldToClickButton
 //
-//  Created by Inder Dhir on 12/6/18.
+//
+//  Created by Inder Dhir on 11/20/22.
 //
 
-import UIKit
+import SwiftUI
 
-/// Callbacks for HoldToClickButton
-public protocol HoldToClickButtonDelegate: class {
-
-    /// User began holding the button to click
-    func didStartHoldingToClick()
-
-    /// User stopped holding the button to click
-    func didStopHoldingToClick()
-
-    /// User completed the hold to click
-    func didCompleteHoldToClick()
-
-    /// User cancelled the hold to click
-    func didCancelHoldToClick()
+public struct HoldToClickButton<Label>: View where Label: View {
+    
+    private let fillColor: Color
+    private let borderColor: Color
+    private let borderWidth: CGFloat
+    private let holdDuration: TimeInterval
+    private let cancelDuration: TimeInterval
+    private let label: () -> Label
+    private let onHoldBegin: (() -> Void)?
+    private let onHoldEnd: (() -> Void)?
+    private let onHoldCancel: (() -> Void)?
+    @StateObject private var viewModel = HoldToClickViewModel()
+    
+    public init(
+        fillColor: Color = Color.orange,
+        borderColor: Color = Color.black,
+        borderWidth: CGFloat = 2.0,
+        holdDuration: TimeInterval = 1.5,
+        cancelDuration: TimeInterval = 0.3,
+        label: @escaping () -> Label,
+        onHoldBegin: (() -> Void)? = nil,
+        onHoldEnd: (() -> Void)? = nil,
+        onHoldCancel: (() -> Void)? = nil
+    ) {
+        self.fillColor = fillColor
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
+        self.holdDuration = holdDuration
+        self.cancelDuration = cancelDuration
+        self.label = label
+        self.onHoldBegin = onHoldBegin
+        self.onHoldEnd = onHoldEnd
+        self.onHoldCancel = onHoldCancel
+    }
+    
+    public var body: some View {
+        GeometryReader { geometryReader in
+            let roundedRect = RoundedRectangle(cornerRadius: geometryReader.size.height * 0.5)
+            
+            Group {
+                label()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(
+                        fillColor
+                            .animation(
+                                viewModel.holdState == .holding ? .easeInOut(duration: holdDuration) : .default,
+                                value: viewModel.holdState
+                            )
+                            .offset(x: fillXOffset(maxWidth: geometryReader.size.width))
+                            .frame(maxWidth: viewModel.holdState == .holding ? .infinity : 0, alignment: .leading)
+                    )
+                    // Ensures that the following gesture works on the outer ZStack
+                    .contentShape(Rectangle())
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { value in
+                                viewModel.onDragGestureChange(
+                                    value: value,
+                                    maxWidth: geometryReader.size.width
+                                )
+                            }
+                            .onEnded { _ in
+                                viewModel.onDragEnd()
+                            }
+                    )
+            }
+            .clipShape(roundedRect)
+            .overlay(roundedRect.strokeBorder(borderColor, lineWidth: borderWidth))
+            .offset(x: viewModel.cancelXOffset, y: 0)
+            .animation(
+                viewModel.holdState == .canceling ?
+                    .easeOut(duration: cancelDuration / 2)
+                    .repeatForever(autoreverses: true).speed(4) : .default,
+                value: viewModel.holdState
+            )
+        }
+        .onAppear {
+            viewModel.setup(
+                holdDuration: holdDuration,
+                cancelDuration: cancelDuration,
+                onHoldBegin: onHoldBegin,
+                onHoldEnd: onHoldEnd,
+                onHoldCancel: onHoldCancel
+            )
+        }
+    }
+    
+    private func fillXOffset(maxWidth: CGFloat) -> CGFloat {
+        if viewModel.holdState == .holding {
+            0
+        } else if viewModel.holdState == .canceling {
+            -(maxWidth * 0.5) - 100
+        } else {
+            -(maxWidth * 0.5)
+        }
+    }
 }
 
-public class HoldToClickButton: UIButton {
-
-    // MARK: Public
-
-    /// Delegate for callbacks
-    public weak var delegate: HoldToClickButtonDelegate?
-
-    /// Duration of the progress animation. Default: 1.5
-    public var animationDuration: TimeInterval = 1.5
-
-    /// Options for progress animation. Default: curveEaseInOut
-    public var animationOptions: UIView.AnimationOptions = .curveEaseInOut
-
-    /// Toggle cancel 'shake' animation. Default: true
-    public var isCancelAnimationEnabled = true
-
-    /// Toggle Error haptic feedback. Default: true
-    public var isErrorHapticFeedbackEnabled = true
-
-    // MARK: Private
-
-    /// The trailing constraint of the progressView, used to animate progress
-    private var trailingConstraint: NSLayoutConstraint!
-
-    /// Haptic feedback
-    private lazy var feedbackGenerator = UINotificationFeedbackGenerator()
-
-    /// Keeps track of whether the button is being held or not. Used to trigger progress and animations
-    private var isHolding = false {
-        didSet {
-            if isHolding {
-                delegate?.didStartHoldingToClick()
-
-                layoutIfNeeded()
-
-                trailingConstraint.isActive = true
-                UIView.animate(
-                    withDuration: animationDuration,
-                    delay: 0,
-                    options: animationOptions,
-                    animations: { self.layoutIfNeeded() },
-                    completion: { [weak self] completed in
-                        if completed {
-                            self?.delegate?.didCompleteHoldToClick()
-                        } else {
-                            self?.delegate?.didCancelHoldToClick()
-
-                            self?.generateErrorFeedbackIfNecessary()
-                            if self?.isCancelAnimationEnabled == true { self?.playCancelAnimation() }
-                        }
-                    })
-            } else {
-                delegate?.didStopHoldingToClick()
-
-                trailingConstraint.isActive = false
-                progressView.layer.removeAllAnimations()
-                setNeedsLayout()
-            }
+#Preview {
+    HoldToClickButton(
+        label: {
+            Text("Hold To Click")
+                .fontWeight(.bold)
+                .foregroundColor(.black)
         }
-    }
-
-    /// View used as a background to show progress while holding the button
-    private var progressView = UIView()
-
-    public init(fillColor: UIColor) {
-        super.init(frame: .zero)
-
-        progressView.backgroundColor = fillColor
-
-        addSubview(progressView)
-        sendSubviewToBack(progressView)
-
-        progressView.translatesAutoresizingMaskIntoConstraints = false
-        progressView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        progressView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        progressView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-
-        trailingConstraint = progressView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        trailingConstraint.isActive = false
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    /// Play the cancel animation when the user stops holding the button
-    private func playCancelAnimation() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.duration = 0.5
-        animation.values = [-20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0]
-        layer.add(animation, forKey: "cancelAnimation")
-    }
-
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !isHolding { isHolding = true }
-    }
-
-    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isHolding = false
-    }
-
-    private func generateErrorFeedbackIfNecessary() {
-        if isErrorHapticFeedbackEnabled {
-            feedbackGenerator.notificationOccurred(.error)
-        }
-    }
+    )
+    .frame(width: 320, height: 50)
+    .padding()
 }
